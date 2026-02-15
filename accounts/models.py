@@ -19,7 +19,7 @@ class CustomUser(AbstractUser):
     user_ID=models.BigAutoField(primary_key=True)
     organisation=models.ForeignKey(Organisation,
                                    on_delete=models.CASCADE,  #  user is deleted when organisation is deleted
-                                   related_name="users",
+                                   related_name="organisations",
                                    null=True,
                                    blank=True,)
     first_name=models.CharField(max_length=100,null=False,blank=False) # already part of Abstract user, field to be removed
