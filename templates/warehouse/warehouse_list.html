@@ -1,9 +1,10 @@
 
+
 {% block content %}
 
 <h1>Warehouse list</h1>
 <br>
-{% for article in article_list %}
+{% for warehouse in warehouse_list %}
 <div class="card">
     <div class="card-header">
         <span class="fw-bold">
@@ -13,7 +14,7 @@
     </div>
     <div class="card-body text-center text-muted">
         {% if warehouse.organisation.pk == request.user.organisation.pk %}
-        <a href="#">Edit</a> 
+        <a href="{% url 'warehouse_detail' warehouse.pk %}">Edit</a> 
         <a href="#">Delete</a>
         {% endif %}
     </div>
